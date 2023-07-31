@@ -1,0 +1,60 @@
+{
+    "last_updated": "Thu, 20 Jul 2023 14:59:03 GMT",
+    "routes": [
+        {
+            "file_path": "views/create_bog/create_bog_view.dart",
+            "route_name": "create_bogViewRoute",
+            "view_name": "CreateBogView"
+        },
+        {
+            "file_path": "views/home_page/home_page_view.dart",
+            "route_name": "home_pageViewRoute",
+            "view_name": "HomePageView"
+        },
+        {
+            "file_path": "views/about/about_view.dart",
+            "route_name": "aboutViewRoute",
+            "view_name": "AboutView"
+        },
+        {
+            "file_path": "views/login/login_view.dart",
+            "route_name": "loginViewRoute",
+            "view_name": "LoginView"
+        },
+        {
+            "file_path": "views/blog/blog_view.dart",
+            "route_name": "blogViewRoute",
+            "view_name": "BlogView"
+        },
+        {
+            "file_path": "views/contact/contact_view.dart",
+            "route_name": "contactViewRoute",
+            "view_name": "ContactView"
+        },
+        {
+            "file_path": "views/create_content/create_content_view.dart",
+            "route_name": "create_contentViewRoute",
+            "view_name": "CreateContentView"
+        },
+        {
+            "file_path": "views/admin_dashboard/admin_dashboard_view.dart",
+            "route_name": "admin_dashboardViewRoute",
+            "view_name": "AdminDashboardView"
+        },
+        {
+            "file_path": "views/error/error_view.dart",
+            "route_name": "errorViewRoute",
+            "view_name": "ErrorView"
+        },
+        {
+            "file_path": "views/blog_details/blog_details_view.dart",
+            "route_name": "blog_detailsViewRoute",
+            "view_name": "BlogDetailsView"
+        },
+        {
+            "file_path": "views/projects/projects_view.dart",
+            "route_name": "projectsViewRoute",
+            "view_name": "ProjectsView"
+        }
+    ]
+}
