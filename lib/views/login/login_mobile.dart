@@ -11,7 +11,7 @@ class _LoginMobile extends StatelessWidget {
       providers: viewModel.providers,
       actions: [
         AuthStateChangeAction<SignedIn>((context, state) {
-          context.vRouter.to("/adminDashboard");
+          context.go("/adminDashboard");
         }),
       ],
     );

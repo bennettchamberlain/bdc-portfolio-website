@@ -4,7 +4,7 @@ import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:vrouter/vrouter.dart';
+import 'package:go_router/go_router.dart';
 import 'login_view_model.dart';
 
 part 'login_mobile.dart';

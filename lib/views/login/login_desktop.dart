@@ -12,7 +12,7 @@ class _LoginDesktop extends StatelessWidget {
             showAuthActionSwitch: true,
             actions: [
               AuthStateChangeAction<SignedIn>((context, state) {
-              context.vRouter.to("/adminDashboard");
+              context.go("/adminDashboard");
               }),
             ],
           );

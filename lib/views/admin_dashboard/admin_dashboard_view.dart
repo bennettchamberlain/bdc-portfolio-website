@@ -1,13 +1,12 @@
 library admin_dashboard_view;
 
-import 'dart:html';
 import 'package:file_picker/file_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:vrouter/vrouter.dart';
+import 'package:go_router/go_router.dart';
 import '../../pages/add_page/add_content_page.dart';
 import 'admin_dashboard_view_model.dart';
 

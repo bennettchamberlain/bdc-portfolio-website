@@ -5,7 +5,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:logger/logger.dart';
 import 'package:stacked/stacked.dart';
 import 'package:bdc_website_v2/core/logger.dart';
-import 'package:vrouter/vrouter.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../core/models/text_element.dart';
 import '../../models/blog/blog_model.dart';
@@ -37,8 +37,8 @@ class BlogDetailsViewModel extends BaseViewModel {
 
   BlogDetailsViewModel(context) {
     log = getLogger(runtimeType.toString());
-    id = VRouter.of(context).pathParameters['Id']!;
-    type = VRouter.of(context).pathParameters['type']!;
+    id = GoRouterState.of(context).pathParameters['Id']!;
+    type = GoRouterState.of(context).pathParameters['type']!;
     // sortWidgets();
   }
 

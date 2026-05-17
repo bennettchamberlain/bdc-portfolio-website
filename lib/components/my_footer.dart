@@ -1,7 +1,7 @@
 import '../components/button_box.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
-import 'package:vrouter/vrouter.dart';
+import 'package:go_router/go_router.dart';
 
 class MyFooter extends StatelessWidget {
   final bool mobile;
@@ -23,11 +23,11 @@ class MyFooter extends StatelessWidget {
               fontSize: mobile ? 14 : 20,
               alignCorL: true,
               onPressed: () {
-                if (context.vRouter.path != "/") {
+                if (GoRouterState.of(context).uri.path != "/") {
                   FirebaseAnalytics.instance
                       .logEvent(name: 'home_page_navigation');
                 }
-                context.vRouter.to("/");
+                context.go("/");
               }),
         ),
         mobile
@@ -46,11 +46,11 @@ class MyFooter extends StatelessWidget {
               fontSize: mobile ? 14 : 20,
               alignCorL: true,
               onPressed: () {
-                if (context.vRouter.path != "/about") {
+                if (GoRouterState.of(context).uri.path != "/about") {
                     FirebaseAnalytics.instance
                         .logEvent(name: 'about_page_navigation');
                 }
-                context.vRouter.to("/about");
+                context.go("/about");
               }),
         ),
         mobile
@@ -69,11 +69,11 @@ class MyFooter extends StatelessWidget {
               fontSize: mobile ? 14 : 20,
               alignCorL: true,
               onPressed: () {
-                if (context.vRouter.path != "/projects") {
+                if (GoRouterState.of(context).uri.path != "/content/projects") {
                   FirebaseAnalytics.instance
                       .logEvent(name: 'projects_page_navigation');
                 }
-                context.vRouter.to("/content/projects");
+                context.go("/content/projects");
               }),
         ),
         mobile
@@ -92,11 +92,11 @@ class MyFooter extends StatelessWidget {
               fontSize: mobile ? 14 : 20,
               alignCorL: true,
               onPressed: () {
-                if (context.vRouter.path != "/content") {
+                if (GoRouterState.of(context).uri.path != "/content/blogs") {
                   FirebaseAnalytics.instance
                       .logEvent(name: 'blog_page_navigation');
                 }
-                context.vRouter.to("/content/blogs");
+                context.go("/content/blogs");
               }),
         ),
         mobile
@@ -115,11 +115,11 @@ class MyFooter extends StatelessWidget {
               fontSize: mobile ? 14 : 20,
               alignCorL: true,
               onPressed: () {
-                if (context.vRouter.path != "/contact") {
+                if (GoRouterState.of(context).uri.path != "/contact") {
                   FirebaseAnalytics.instance
                       .logEvent(name: 'contact_page_navigation');
                 }
-                context.vRouter.to("/contact");
+                context.go("/contact");
               }),
         ),
       ],

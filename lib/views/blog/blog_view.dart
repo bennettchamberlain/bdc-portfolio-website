@@ -4,7 +4,7 @@ import 'package:bdc_website_v2/models/blog/blog_model.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:vrouter/vrouter.dart';
+import 'package:go_router/go_router.dart';
 import '../../components/blog_card.dart';
 import '../../components/my_footer.dart';
 import '../../components/my_navigation_bar.dart';

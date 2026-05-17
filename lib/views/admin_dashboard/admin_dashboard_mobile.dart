@@ -13,7 +13,7 @@ class _AdminDashboardMobile extends StatelessWidget {
           icon: const Icon(Icons.logout),
           onPressed: () {
             FirebaseAuth.instance.signOut();
-            context.vRouter.to("/login");
+            context.go("/login");
           },
         )
       ]),
@@ -24,14 +24,14 @@ class _AdminDashboardMobile extends StatelessWidget {
         TextButton(
           child: const Text("Add a new Blog"),
           onPressed: () {
-            context.vRouter.to("/createBlog/blogs");
+            context.go("/createBlog/blogs");
           },
         ),
         const SizedBox(height: 20),
         TextButton(
           child: const Text("Add a new Project"),
           onPressed: () {
-            context.vRouter.to("/createBlog/projects");
+            context.go("/createBlog/projects");
           },
         ),
         const SizedBox(height: 20),

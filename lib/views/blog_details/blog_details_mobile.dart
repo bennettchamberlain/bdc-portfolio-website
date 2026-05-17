@@ -23,7 +23,7 @@ class _BlogDetailsMobile extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          FlutterAdManagerWeb(
+                          blogAdBanner(
                             adUnitCode: viewModel.adUnitCode,
                             debug: true,
                             width: 1100,

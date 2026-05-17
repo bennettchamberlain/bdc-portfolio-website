@@ -1,0 +1,20 @@
+name: flutter_ad_manager_web
+description: Simple package that allow you to display ads primarily created to display Adsense ads on Flutter Web.
+version: 0.0.2
+publish_to: none
+
+environment:
+  sdk: ^3.10.0
+  flutter: ">=3.16.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  pointer_interceptor: ^0.10.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:

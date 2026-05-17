@@ -1,9 +1,7 @@
 import 'dart:convert';
-import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:file_picker/_internal/file_picker_web.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:logger/logger.dart';
@@ -56,14 +54,13 @@ class AdminDashboardViewModel extends BaseViewModel {
   }
 
   void handleUploadButtonPressed() async {
-    FilePickerResult? result = await FilePickerWeb.platform.pickFiles(
+    FilePickerResult? result = await FilePicker.platform.pickFiles(
       type: FileType.custom,
       allowMultiple: false,
       allowedExtensions: ['pdf'],
     );
 
     if (result != null && result.files.isNotEmpty) {
-      File file;
       String fileName;
 
       List<int> fileBytes = result.files.first.bytes!;

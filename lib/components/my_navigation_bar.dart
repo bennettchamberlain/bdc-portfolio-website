@@ -1,10 +1,7 @@
 
-import 'package:bdc_website_v2/views/create_bog/create_bog_view.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
-import 'package:stacked_services/stacked_services.dart';
-import 'package:vrouter/vrouter.dart';
-import '../core/locator.dart';
+import 'package:go_router/go_router.dart';
 import '../utils/providers.dart';
 import 'button_box.dart';
 
@@ -18,7 +15,6 @@ class MyNavigationBar extends StatefulWidget {
 
 class _MyNavigationBarState extends State<MyNavigationBar> {
   bool selectedNavigation = false;
-  NavigationService navigationService = locator<NavigationService>();
 
   @override
   void initState() {
@@ -138,11 +134,11 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
                         fontSize: 20,
                         alignCorL: false,
                         onPressed: () {
-                          if (context.vRouter.path != "/") {
+                          if (GoRouterState.of(context).uri.path != "/") {
                             FirebaseAnalytics.instance
                                 .logEvent(name: 'home_page_navigation');
                           }
-                          context.vRouter.to("/");
+                          context.go("/");
                         },
                       ),
                       ButtonBox(
@@ -154,11 +150,11 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
                         fontSize: 20,
                         alignCorL: false,
                         onPressed: () {
-                          if (context.vRouter.path != "/about") {
+                          if (GoRouterState.of(context).uri.path != "/about") {
                             FirebaseAnalytics.instance
                                 .logEvent(name: 'about_page_navigation');
                           }
-                          context.vRouter.to("/about");
+                          context.go("/about");
                         },
                       ),
                       ButtonBox(
@@ -170,11 +166,11 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
                         fontSize: 20,
                         alignCorL: false,
                         onPressed: () {
-                          if (context.vRouter.path != "/content/projects") {
+                          if (GoRouterState.of(context).uri.path != "/content/projects") {
                             FirebaseAnalytics.instance
                                 .logEvent(name: 'projects_page_navigation');
                           }
-                          context.vRouter.to("/content/projects");
+                          context.go("/content/projects");
                         },
                       ),
                       ButtonBox(
@@ -186,11 +182,11 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
                         fontSize: 20,
                         alignCorL: false,
                         onPressed: () {
-                          if (context.vRouter.path != "/content") {
+                          if (GoRouterState.of(context).uri.path != "/content/blogs") {
                             FirebaseAnalytics.instance
                                 .logEvent(name: "/content/blogs");
                           }
-                          context.vRouter.to("/content/blogs");
+                          context.go("/content/blogs");
                         },
                       ),
                       ButtonBox(
@@ -202,11 +198,11 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
                         fontSize: 20,
                         alignCorL: false,
                         onPressed: () {
-                          if (context.vRouter.path != "/contact") {
+                          if (GoRouterState.of(context).uri.path != "/contact") {
                             FirebaseAnalytics.instance
                                 .logEvent(name: 'contact_page_navigation');
                           }
-                          context.vRouter.to("/contact");
+                          context.go("/contact");
                         },
                       ),
                     ],

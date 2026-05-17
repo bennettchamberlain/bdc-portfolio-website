@@ -1,7 +1,6 @@
 library create_bog_view;
 
 import 'dart:convert';
-import 'dart:html';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fast_cached_network_image/fast_cached_network_image.dart';

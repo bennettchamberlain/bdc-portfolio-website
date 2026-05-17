@@ -3,7 +3,7 @@ library blog_details_view;
 import 'package:bdc_website_v2/components/my_footer.dart';
 import 'package:bdc_website_v2/core/models/ui_element.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ad_manager_web/flutter_ad_manager_web.dart';
+import 'package:bdc_website_v2/components/blog_ad_slot.dart';
 import 'package:stacked/stacked.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import '../../models/blog/blog_model.dart';

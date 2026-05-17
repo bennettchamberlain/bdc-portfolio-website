@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:vrouter/vrouter.dart';
+import 'package:go_router/go_router.dart';
 
 import '../models/blog/blog_model.dart';
 
@@ -37,14 +37,14 @@ class BlogCard extends StatelessWidget {
           onTap: () {
             final box = GetStorage();
             box.write('selectedBlog', blog);
-            context.vRouter.to(
+            context.go(
               "/content/$type/$id",
             );
             // Navigate to the larger page.
-            // if (context.vRouter.path != path) {
+            // if (GoRouterState.of(context).uri.path != path) {
             //   FirebaseAnalytics.instance.logEvent(name: '$path-event');
             // }
-            // context.vRouter.to(path);
+            // context.go(path);
           },
           child: Row(
             children: [

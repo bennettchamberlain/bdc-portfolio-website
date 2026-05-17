@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:typed_data'; 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:custom_alert_dialog_box/custom_alert_dialog_box.dart';
-import 'package:file_picker/_internal/file_picker_web.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
@@ -10,10 +9,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:logger/logger.dart';
 import 'package:stacked/stacked.dart';
 import 'package:bdc_website_v2/core/logger.dart';
-import 'package:stacked_services/stacked_services.dart';
-import 'package:vrouter/vrouter.dart';
-
-import '../../core/locator.dart';
+import 'package:go_router/go_router.dart';
 import '../../services/storage_handler.dart';
 import '../../utils/crud.dart';
 
@@ -24,7 +20,7 @@ class CreateContentViewModel extends BaseViewModel {
   CreateContentViewModel(context) {
     log = getLogger(runtimeType.toString());
    contextBuild = context;
-    type = VRouter.of(context).pathParameters['type']!;
+    type = GoRouterState.of(context).pathParameters['type']!;
   }
 
   String authorName = "", title = "", desc = "";
@@ -32,14 +28,13 @@ class CreateContentViewModel extends BaseViewModel {
   List<Uint8List?> selectedImages = [];
   CrudMethods crudMethods = CrudMethods();
   FirebaseFirestore firestore = FirebaseFirestore.instance;
-  final _dialogService = locator<DialogService>();
   bool isLoading = false;
   int selectedThumbnail = 0;
   BuildContext? contextBuild;
   
 
   Future getImage(WidgetRef ref) async {
-    FilePickerResult? result = await FilePickerWeb.platform.pickFiles(
+    FilePickerResult? result = await FilePicker.platform.pickFiles(
       allowMultiple: true,
     );
     selectedImage = result!.files.single.bytes;

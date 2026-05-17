@@ -1,8 +1,7 @@
+import 'package:file_picker/file_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'package:image_picker_web/image_picker_web.dart';
 import 'package:universal_io/io.dart';
 
 import '../../utils/crud.dart';
@@ -23,11 +22,15 @@ class _AddContentPageState extends State<AddContentPage> {
   CrudMethods crudMethods = CrudMethods();
 
   Future getImage() async {
-    Uint8List? bytesFromPicker = await ImagePickerWeb.getImageAsBytes();
-
-    setState(() {
-      selectedImage = bytesFromPicker ?? Uint8List(1);
-    });
+    final FilePickerResult? result = await FilePicker.platform.pickFiles(
+      type: FileType.image,
+      withData: true,
+    );
+    if (result != null && result.files.single.bytes != null) {
+      setState(() {
+        selectedImage = result.files.single.bytes!;
+      });
+    }
   }
 
   uploadBlog() async {

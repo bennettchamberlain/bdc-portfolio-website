@@ -3,7 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:logger/logger.dart';
 import 'package:stacked/stacked.dart';
 import 'package:bdc_website_v2/core/logger.dart';
-import 'package:vrouter/vrouter.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../models/blog/blog_model.dart';
 
@@ -15,7 +15,7 @@ class BlogViewModel extends BaseViewModel {
   late Future<List<Blog>> blogs;
   BlogViewModel(context) {
     log = getLogger(runtimeType.toString());
-    type = VRouter.of(context).pathParameters['type']!;
+    type = GoRouterState.of(context).pathParameters['type']!;
     blogs = getAllBlogs();
   }
 

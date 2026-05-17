@@ -4,7 +4,6 @@ import 'dart:typed_data';
 import 'package:bdc_website_v2/extensions/color_extension.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:custom_alert_dialog_box/custom_alert_dialog_box.dart';
-import 'package:file_picker/_internal/file_picker_web.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +14,7 @@ import 'package:logger/logger.dart';
 import 'package:quill_html_editor/quill_html_editor.dart';
 import 'package:stacked/stacked.dart';
 import 'package:bdc_website_v2/core/logger.dart';
-import 'package:vrouter/vrouter.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../core/models/image_element.dart';
 import '../../core/models/text_element.dart';
@@ -51,7 +50,7 @@ class CreateBogViewModel extends BaseViewModel {
   Color currentColor = Color(0xff443a49);
 
   Future getImage(WidgetRef ref) async {
-    FilePickerResult? result = await FilePickerWeb.platform.pickFiles(
+    FilePickerResult? result = await FilePicker.platform.pickFiles(
       onFileLoading: (FilePickerStatus status) =>
           const CircularProgressIndicator.adaptive(),
       allowMultiple: false,
@@ -371,7 +370,7 @@ class CreateBogViewModel extends BaseViewModel {
   CreateBogViewModel(context) {
     contextBuild = context;
     log = getLogger(runtimeType.toString());
-    type = VRouter.of(context).pathParameters['type']!;
+    type = GoRouterState.of(context).pathParameters['type']!;
     getImages = FirebaseFirestore.instance.collection('image_lib').snapshots();
     sortWidgets();
   }

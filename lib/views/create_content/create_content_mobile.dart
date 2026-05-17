@@ -7,7 +7,7 @@ class _CreateContentMobile extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final type = VRouter.of(context).pathParameters['type'];
+    final type = GoRouterState.of(context).pathParameters['type'];
     final uploadProgress = ref.watch(uploadProgressProvider);
     return Scaffold(
       appBar: AppBar(
