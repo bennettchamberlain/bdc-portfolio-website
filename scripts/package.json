@@ -1,0 +1,11 @@
+{
+  "name": "bdc-content-scripts",
+  "version": "1.0.0",
+  "description": "Content publishing scripts for bdc-v5",
+  "scripts": {
+    "publish": "node publish.js"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.0.0"
+  }
+}

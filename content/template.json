@@ -1,0 +1,53 @@
+{
+  "_comment": "Copy this file, rename it, and fill in your content. Then run: node scripts/publish.js content/blogs/your-file.json",
+  "type": "blogs",
+  "title": "Your Post Title Here",
+  "author": "Bennett Chamberlain",
+  "desc": "A one or two sentence description shown on the card.",
+  "thumbnailUrl": "",
+  "blocks": [
+    {
+      "type": "heading",
+      "content": "Introduction",
+      "level": 1,
+      "align": "left",
+      "colorHex": "#000000"
+    },
+    {
+      "type": "paragraph",
+      "content": "Your first paragraph goes here.",
+      "align": "left",
+      "fontSize": 16,
+      "fontFamily": "Helvetica",
+      "colorHex": "#000000"
+    },
+    {
+      "type": "heading",
+      "content": "A Section Heading",
+      "level": 2,
+      "align": "left",
+      "colorHex": "#000000"
+    },
+    {
+      "type": "paragraph",
+      "content": "More content here.",
+      "align": "left",
+      "fontSize": 16,
+      "fontFamily": "Helvetica",
+      "colorHex": "#000000"
+    },
+    {
+      "type": "image",
+      "url": "https://your-image-url.com/image.jpg",
+      "caption": "Optional image caption"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "code",
+      "content": "// code goes here\nconsole.log('hello');",
+      "language": "javascript"
+    }
+  ]
+}
