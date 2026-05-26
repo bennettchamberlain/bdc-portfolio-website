@@ -3,13 +3,11 @@ import 'package:bdc_website_v2/views/admin_dashboard/admin_dashboard_view.dart';
 import 'package:bdc_website_v2/views/blog/blog_view.dart';
 import 'package:bdc_website_v2/views/blog_details/blog_details_view.dart';
 import 'package:bdc_website_v2/views/contact/contact_view.dart';
-import 'package:bdc_website_v2/views/create_bog/create_bog_view.dart';
-import 'package:bdc_website_v2/views/create_content/create_content_view.dart';
+import 'package:bdc_website_v2/views/content_editor/content_editor_view.dart';
 import 'package:bdc_website_v2/views/error/error_view.dart';
 import 'package:bdc_website_v2/views/home_page/home_page_view.dart';
 import 'package:bdc_website_v2/views/login/login_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -26,8 +24,7 @@ final GoRouter appRouter = GoRouter(
   redirect: (BuildContext context, GoRouterState state) {
     final user = FirebaseAuth.instance.currentUser;
     final path = state.uri.path;
-    final isAdminRoute = path.startsWith('/createBlog') ||
-        path.startsWith('/createContent') ||
+    final isAdminRoute = path.startsWith('/editor') ||
         path == '/adminDashboard';
     if (isAdminRoute && user == null) {
       return '/login';
@@ -64,12 +61,12 @@ final GoRouter appRouter = GoRouter(
       builder: (context, state) => BlogDetailsView(),
     ),
     GoRoute(
-      path: '/createBlog/:type',
-      builder: (context, state) => const CreateBogView(),
+      path: '/editor/:type',
+      builder: (context, state) => const ContentEditorView(),
     ),
     GoRoute(
-      path: '/createContent/:type',
-      builder: (context, state) => const CreateContentView(),
+      path: '/editor/:type/:id',
+      builder: (context, state) => const ContentEditorView(),
     ),
     GoRoute(
       path: '/adminDashboard',

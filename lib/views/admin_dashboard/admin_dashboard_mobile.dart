@@ -2,44 +2,9 @@ part of admin_dashboard_view;
 
 class _AdminDashboardMobile extends StatelessWidget {
   final AdminDashboardViewModel viewModel;
-
-  _AdminDashboardMobile(this.viewModel);
+  const _AdminDashboardMobile(this.viewModel);
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("Admin Dashboard"), actions: [
-        IconButton(
-          icon: const Icon(Icons.logout),
-          onPressed: () {
-            FirebaseAuth.instance.signOut();
-            context.go("/login");
-          },
-        )
-      ]),
-      body: SingleChildScrollView(
-          child: Center(
-              child: Column(children: [
-        const SizedBox(height: 20),
-        TextButton(
-          child: const Text("Add a new Blog"),
-          onPressed: () {
-            context.go("/createBlog/blogs");
-          },
-        ),
-        const SizedBox(height: 20),
-        TextButton(
-          child: const Text("Add a new Project"),
-          onPressed: () {
-            context.go("/createBlog/projects");
-          },
-        ),
-        const SizedBox(height: 20),
-        TextButton(
-          onPressed: viewModel.handleUploadButtonPressed,
-          child: const Text("Replace resume on about page"),
-        )
-      ]))),
-    );
-  }
+  Widget build(BuildContext context) => _AdminBody(viewModel);
 }
+

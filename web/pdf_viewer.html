@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #fff;
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="c"></canvas>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+    var url = new URLSearchParams(location.search).get('url');
+    if (url) {
+      pdfjsLib.getDocument(url).promise.then(function(pdf) {
+        pdf.getPage(1).then(function(page) {
+          var dpr = window.devicePixelRatio || 1;
+          var w = window.innerWidth;
+          var viewport = page.getViewport({ scale: 1 });
+          var scale = w / viewport.width;
+          var scaledViewport = page.getViewport({ scale: scale });
+
+          var canvas = document.getElementById('c');
+          // Use DPR for crisp rendering on Retina displays
+          canvas.width  = Math.floor(scaledViewport.width  * dpr);
+          canvas.height = Math.floor(scaledViewport.height * dpr);
+          canvas.style.width  = scaledViewport.width  + 'px';
+          canvas.style.height = scaledViewport.height + 'px';
+
+          var ctx = canvas.getContext('2d');
+          ctx.scale(dpr, dpr);
+
+          page.render({ canvasContext: ctx, viewport: scaledViewport }).promise.then(function() {
+            // Tell the Flutter parent what height we rendered at
+            window.parent.postMessage(
+              { type: 'pdf-height', height: scaledViewport.height }, '*'
+            );
+          });
+        });
+      }).catch(function(err) {
+        console.error('PDF render error:', err);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -40,7 +40,6 @@ dependencies:
   syncfusion_flutter_pdfviewer: ^31.1.19
   carousel_slider: ^5.0.0
   custom_alert_dialog_box: ^1.0.2
-  quill_html_editor: 2.2.8
   fast_cached_network_image: ^1.2.0
   quds_popup_menu: ^0.0.1+1
   flutter_ad_manager_web:

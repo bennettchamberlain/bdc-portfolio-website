@@ -49,35 +49,43 @@ class _BlogDesktopState extends State<_BlogDesktop> {
                       decoration: BoxDecoration(border: Border.all(width: 8)),
                       child: Padding(
                         padding: const EdgeInsets.all(1),
-                        child: SizedBox(
-                          height: 800,
-                          child: FutureBuilder<List<Blog>>(
-                              future: widget.viewModel.blogs,
-                              builder: (context, snapshot) {
-                                if (snapshot.connectionState ==
-                                    ConnectionState.waiting) {
-                                  return const Center(
-                                      child: CircularProgressIndicator());
-                                } else {
-                                  if (snapshot.data!.isNotEmpty &&
-                                      !snapshot.hasError) {
-                                    return ListView.builder(
-                                        itemBuilder: (context, index) {
-                                          Blog blog = snapshot.data![index];
-                                          return BlogCard(
-                                            id: blog.id,
-                                            mobile: false,
-                                            type: widget.viewModel.type,
-                                            blog: blog,
-                                          );
-                                        },
-                                        itemCount: snapshot.data!.length);
-                                  } else {
-                                    return const Text("No Blogs to Show");
-                                  }
-                                }
-                              }),
-                        ),
+                        child: FutureBuilder<List<Blog>>(
+                            future: widget.viewModel.blogs,
+                            builder: (context, snapshot) {
+                              if (snapshot.connectionState ==
+                                  ConnectionState.waiting) {
+                                return const Padding(
+                                  padding: EdgeInsets.all(40),
+                                  child: Center(
+                                      child: CircularProgressIndicator()),
+                                );
+                              }
+                              final items = snapshot.data ?? [];
+                              if (items.isEmpty) {
+                                return const Padding(
+                                  padding: EdgeInsets.all(40),
+                                  child: Center(
+                                      child: Text('No posts yet.',
+                                          style: TextStyle(
+                                              color: Colors.grey,
+                                              fontSize: 16))),
+                                );
+                              }
+                              return ListView.builder(
+                                  shrinkWrap: true,
+                                  physics:
+                                      const NeverScrollableScrollPhysics(),
+                                  itemBuilder: (context, index) {
+                                    Blog blog = items[index];
+                                    return BlogCard(
+                                      id: blog.id,
+                                      mobile: false,
+                                      type: widget.viewModel.type,
+                                      blog: blog,
+                                    );
+                                  },
+                                  itemCount: items.length);
+                            }),
                       ),
                     ),
                     const SizedBox(height: 50),

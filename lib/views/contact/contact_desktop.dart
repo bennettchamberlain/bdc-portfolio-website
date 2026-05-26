@@ -94,6 +94,8 @@ class _ContactDesktopState extends State<_ContactDesktop> {
                     ),
 
                     //PUT EVERYTIHING HERE
+                    const _CalendarBookingWidget(),
+                    const SizedBox(height: 24),
                     Container(
                         decoration: BoxDecoration(border: Border.all(width: 8)),
                         child: Column(
@@ -183,31 +185,49 @@ class _ContactDesktopState extends State<_ContactDesktop> {
                                       maxLines: 4,
                                     ),
                                     SizedBox(height: 16),
-                                    Container(
-                                      padding: EdgeInsets.all(15),
-                                      decoration: BoxDecoration(
-                                          border: Border.all(
-                                              width: 8, color: Colors.black)),
-                                      child: TextButton(
-                                        onPressed: () async {
-                                          setState(() {
-                                            isLoading = true;
-                                          });
-                                          await _submitForm();
-                                          Future.delayed(
-                                                  const Duration(seconds: 2))
-                                              .then((value) => setState(() {
-                                                    isLoading = false;
-                                                  }));
-                                        },
-                                        child: (isLoading == true)
-                                            ? CircularProgressIndicator()
-                                            : Text(
-                                                'Submit',
-                                                style: TextStyle(
-                                                    fontSize: 20,
-                                                    fontWeight: FontWeight.w900,
-                                                    color: Colors.black),
+                                    InkWell(
+                                      onTap: () async {
+                                        setState(() {
+                                          isLoading = true;
+                                        });
+                                        await _submitForm();
+                                        Future.delayed(
+                                                const Duration(seconds: 2))
+                                            .then((value) => setState(() {
+                                                  isLoading = false;
+                                                }));
+                                      },
+                                      child: Container(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 24, vertical: 14),
+                                        color: Colors.black,
+                                        child: isLoading
+                                            ? const SizedBox(
+                                                width: 20,
+                                                height: 20,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  color: Colors.white,
+                                                  strokeWidth: 2,
+                                                ),
+                                              )
+                                            : const Row(
+                                                mainAxisSize: MainAxisSize.min,
+                                                children: [
+                                                  Icon(Icons.send,
+                                                      color: Colors.white,
+                                                      size: 18),
+                                                  SizedBox(width: 10),
+                                                  Text(
+                                                    'Send Message',
+                                                    style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 16,
+                                                      fontWeight:
+                                                          FontWeight.w900,
+                                                    ),
+                                                  ),
+                                                ],
                                               ),
                                       ),
                                     ),

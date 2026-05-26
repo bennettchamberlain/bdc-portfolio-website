@@ -1,15 +1,14 @@
-// [ This is an auto generated file ]
+// [ This is an auto generated file — kept for legacy compatibility, app uses GoRouter ]
 
 import 'package:flutter/material.dart';
 import 'package:bdc_website_v2/core/router_constants.dart';
 
-import 'package:bdc_website_v2/views/create_bog/create_bog_view.dart' as view0;
+import 'package:bdc_website_v2/views/content_editor/content_editor_view.dart' as view0;
 import 'package:bdc_website_v2/views/home_page/home_page_view.dart' as view1;
 import 'package:bdc_website_v2/views/about/about_view.dart' as view2;
 import 'package:bdc_website_v2/views/login/login_view.dart' as view3;
 import 'package:bdc_website_v2/views/blog/blog_view.dart' as view4;
 import 'package:bdc_website_v2/views/contact/contact_view.dart' as view5;
-import 'package:bdc_website_v2/views/create_content/create_content_view.dart' as view6;
 import 'package:bdc_website_v2/views/admin_dashboard/admin_dashboard_view.dart' as view7;
 import 'package:bdc_website_v2/views/error/error_view.dart' as view8;
 import 'package:bdc_website_v2/views/blog_details/blog_details_view.dart' as view9;
@@ -18,7 +17,7 @@ class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case createBogViewRoute:
-        return MaterialPageRoute(builder: (_) => view0.CreateBogView());
+        return MaterialPageRoute(builder: (_) => const view0.ContentEditorView());
       case homePageViewRoute:
         return MaterialPageRoute(builder: (_) => view1.HomePageView());
       case aboutViewRoute:
@@ -30,7 +29,7 @@ class Router {
       case contactViewRoute:
         return MaterialPageRoute(builder: (_) => view5.ContactView());
       case createContentViewRoute:
-        return MaterialPageRoute(builder: (_) => view6.CreateContentView());
+        return MaterialPageRoute(builder: (_) => const view0.ContentEditorView());
       case adminDashboardViewRoute:
         return MaterialPageRoute(builder: (_) => view7.AdminDashboardView());
       case errorViewRoute:

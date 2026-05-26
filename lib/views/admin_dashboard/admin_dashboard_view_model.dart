@@ -1,9 +1,11 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
+import 'package:bdc_website_v2/models/blog/blog_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:stacked/stacked.dart';
 import 'package:bdc_website_v2/core/logger.dart';
@@ -77,6 +79,43 @@ class AdminDashboardViewModel extends BaseViewModel {
     } else {
       // No file selected or an error occurred
       print('No file selected.');
+    }
+  }
+
+  // --- Content list + delete ---
+
+  Stream<List<Blog>> getItemsStream(String type) {
+    return FirebaseFirestore.instance
+        .collection(type)
+        .orderBy('createdAt', descending: true)
+        .snapshots()
+        .map((snap) =>
+            snap.docs.map((d) => Blog.fromMap(d.data())).toList());
+  }
+
+  Future<void> confirmAndDelete(
+      BuildContext context, String type, String id, String title) async {
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (_) => AlertDialog(
+        title: const Text('Delete post?'),
+        content: Text(
+            'Are you sure you want to delete "$title"?\nThis cannot be undone.'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: const Text('Cancel'),
+          ),
+          TextButton(
+            style: TextButton.styleFrom(foregroundColor: Colors.red),
+            onPressed: () => Navigator.of(context).pop(true),
+            child: const Text('Delete'),
+          ),
+        ],
+      ),
+    );
+    if (confirmed == true) {
+      await FirebaseFirestore.instance.collection(type).doc(id).delete();
     }
   }
 }

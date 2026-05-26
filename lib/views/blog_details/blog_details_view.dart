@@ -1,7 +1,8 @@
 library blog_details_view;
 
+import 'package:bdc_website_v2/components/content_blocks/content_block_widget.dart';
 import 'package:bdc_website_v2/components/my_footer.dart';
-import 'package:bdc_website_v2/core/models/ui_element.dart';
+import 'package:bdc_website_v2/components/my_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:bdc_website_v2/components/blog_ad_slot.dart';
 import 'package:stacked/stacked.dart';

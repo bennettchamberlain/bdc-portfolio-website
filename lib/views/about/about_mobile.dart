@@ -10,13 +10,10 @@ class _AboutMobile extends StatefulWidget {
 }
 
 class _AboutMobileState extends State<_AboutMobile> {
-  bool selectedNavigation = false;
   bool pageAnimation = false;
+
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 0)).then((value) => setState(() {
-          selectedNavigation = true;
-        }));
     Future.delayed(const Duration(milliseconds: 600))
         .then((value) => setState(() {
               pageAnimation = true;
@@ -27,6 +24,8 @@ class _AboutMobileState extends State<_AboutMobile> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    final double containerWidth = size.width - 30 - 16;
+    final double pdfHeight = containerWidth * (792.0 / 612.0);
     return Scaffold(
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
@@ -40,77 +39,24 @@ class _AboutMobileState extends State<_AboutMobile> {
               children: [
                 Column(
                   children: [
-                    const SizedBox(
-                      height: 65,
-                    ),
-                    Stack(
-                      children: [
-                        Container(
-                          height: 700,
-                          decoration: BoxDecoration(
-                              border:
-                                  Border.all(color: Colors.black, width: 8)),
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const SizedBox(height: 10),
-                            AnimatedContainer(
-                              curve: Curves.fastOutSlowIn,
-                              decoration: const BoxDecoration(
-                                border: Border(
-                                  bottom:
-                                      BorderSide(width: 8, color: Colors.black),
-                                ),
-                              ),
-                              duration: const Duration(milliseconds: 1100),
-                              height: pageAnimation ? 690 : 0,
-                              width: size.width,
-                              child: SingleChildScrollView(
-                                child: Column(
-                                  children: [
-                                    FutureBuilder<Resume?>(
-                                        future: widget.viewModel.getResumeUrl(),
-                                        builder: (context, snapshot) {
-                                          if (snapshot.connectionState ==
-                                              ConnectionState.waiting) {
-                                            return CircularProgressIndicator();
-                                          } else {
-                                            return SizedBox(
-                                              height: 690,
-                                              width: MediaQuery.of(context)
-                                                      .size
-                                                      .width -
-                                                  50,
-                                              child: SfPdfViewer.network(
-                                                  snapshot.data!.url,
-                                                  initialZoomLevel: 1,
-                                                  enableDoubleTapZooming: true,
-                                                  canShowScrollHead: true,
-                                                  canShowScrollStatus: false),
-                                            );
-                                          }
-                                        }),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+                    const SizedBox(height: 65),
+                    AnimatedContainer(
+                      decoration: BoxDecoration(
+                          border:
+                              Border.all(color: Colors.black, width: 8)),
+                      curve: Curves.fastOutSlowIn,
+                      duration: const Duration(milliseconds: 1100),
+                      height: pageAnimation ? pdfHeight : 0,
+                      width: size.width - 30,
+                      child: _ResumePdfSection(
+                        resumeFuture: widget.viewModel.getResumeUrl(),
+                        containerWidth: containerWidth,
+                      ),
                     ),
                     const SizedBox(height: 20),
-                    MyFooter(mobile: true)
+                    MyFooter(mobile: true),
                   ],
                 ),
-                //PUT EVERYTIHING HERE
-                // Positioned(
-                //   top: 600,
-                //   width: size.width,
-                //   child: MyFooter(
-                //     mobile: false,
-                //   ),
-                // ),
                 const MyNavigationBar(mobile: true),
               ],
             ),
@@ -120,3 +66,4 @@ class _AboutMobileState extends State<_AboutMobile> {
     );
   }
 }
+

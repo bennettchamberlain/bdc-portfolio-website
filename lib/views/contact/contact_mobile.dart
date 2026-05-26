@@ -81,8 +81,9 @@ class _ContactMobileState extends State<_ContactMobile> {
                     ),
 
                     //PUT EVERYTIHING HERE
+                    const _CalendarBookingWidget(),
+                    const SizedBox(height: 20),
                     Container(
-                        height: 460,
                         decoration: BoxDecoration(border: Border.all(width: 8)),
                         child: Column(
                           children: [
@@ -171,24 +172,50 @@ class _ContactMobileState extends State<_ContactMobile> {
                                       maxLines: 4,
                                     ),
                                     SizedBox(height: 16),
-                                    Container(
-                                      padding: EdgeInsets.only(
-                                          left: 15,
-                                          right: 15,
-                                          top: 15,
-                                          bottom: 12),
-                                      decoration: BoxDecoration(
-                                          border: Border.all(
-                                              width: 8, color: Colors.black)),
-                                      child: TextButton(
-                                        onPressed: _submitForm,
-                                        child: Text(
-                                          'Submit',
-                                          style: TextStyle(
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.w900,
-                                              color: Colors.black),
-                                        ),
+                                    InkWell(
+                                      onTap: () async {
+                                        setState(() {
+                                          isLoading = true;
+                                        });
+                                        await _submitForm();
+                                        Future.delayed(
+                                                const Duration(seconds: 2))
+                                            .then((value) => setState(() {
+                                                  isLoading = false;
+                                                }));
+                                      },
+                                      child: Container(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 24, vertical: 14),
+                                        color: Colors.black,
+                                        child: isLoading
+                                            ? const SizedBox(
+                                                width: 20,
+                                                height: 20,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  color: Colors.white,
+                                                  strokeWidth: 2,
+                                                ),
+                                              )
+                                            : const Row(
+                                                mainAxisSize: MainAxisSize.min,
+                                                children: [
+                                                  Icon(Icons.send,
+                                                      color: Colors.white,
+                                                      size: 18),
+                                                  SizedBox(width: 10),
+                                                  Text(
+                                                    'Send Message',
+                                                    style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 16,
+                                                      fontWeight:
+                                                          FontWeight.w900,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                       ),
                                     ),
                                   ],
