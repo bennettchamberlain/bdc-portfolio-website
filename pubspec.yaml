@@ -71,7 +71,7 @@ flutter:
           weight: 600
         - asset: assets/fonts/Helvetica-BoldOblique.ttf
           weight: 800
-        - asset: assets/fonts/Helvetica-light-1.ttf
+        - asset: assets/fonts/helvetica-light-1.ttf
           weight: 100
         - asset: assets/fonts/Helvetica-Oblique.ttf
           weight: 500
