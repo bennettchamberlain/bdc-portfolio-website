@@ -1,16 +1,15 @@
-# bdc_website_v2
+# Bennett Chamberlain
 
-A new Flutter project.
+Personal site. Next.js lives in `apps/swamii.me`. The Flutter app in this repo is the archive.
 
-## Getting Started
+## Run
 
-This project is a starting point for a Flutter application.
+```bash
+cd apps/swamii.me
+npm install
+npm run dev
+```
 
-A few resources to get you started if this is your first Flutter project:
+Copy and projects are in `apps/swamii.me/src/data/site.ts`.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Layout adapted from [swamii.me](https://swamii.me).

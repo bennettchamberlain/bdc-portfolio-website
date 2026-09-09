@@ -43,7 +43,7 @@ export const projects: Project[] = [
     id: 3,
     name: "This Site",
     description:
-      "Personal site, rebuilt. Swamii's Next.js stack and type, Bennett's 8px black frames and copy. No Firebase. Just files in the repo.",
+      "Personal site, rebuilt. Next.js, 8px black frames, copy in the repo. No Firebase.",
     image: "/images/headshot.jpg",
     github: "https://github.com/bennettchamberlain/bdc-portfolio-website",
     status: "building",

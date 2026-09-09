@@ -30,7 +30,6 @@ const columns: FootColumn[] = [
       { text: "Next.js", href: "https://nextjs.org" },
       { text: "TypeScript", href: "https://www.typescriptlang.org" },
       { text: "Tailwind CSS", href: "https://tailwindcss.com" },
-      { text: "Layout after swamii.me", href: "https://swamii.me" },
     ],
   },
   {
