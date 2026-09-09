@@ -19,6 +19,7 @@ const ProjectsSection = () => {
             title={project.name}
             description={project.description}
             liveLink={project.link}
+            links={project.links}
             githubLink={project.github}
             status={project.status}
             projectBg={project.projectBg || ""}

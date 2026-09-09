@@ -6,6 +6,7 @@ import StatusDot from "../BlinkingDot.tsx/BlinkingDot";
 import RingButton from "../RingButton";
 import { GitHubIcon } from "@/app/icons/Githubicon";
 import { CircleArrowRight } from "lucide-react";
+import type { ProjectLink } from "@/helpers/constants";
 
 type ProjectStatus = "live" | "building" | "discontinued";
 
@@ -15,6 +16,7 @@ type ProjectCardProps = {
   description: string;
   status?: ProjectStatus;
   liveLink?: string;
+  links?: ProjectLink[];
   githubLink?: string;
   projectBg?: string;
 };
@@ -31,9 +33,16 @@ const ProjectCard = ({
   description,
   status = "live",
   liveLink,
+  links,
   githubLink,
 }: ProjectCardProps) => {
   const color = statusColorMap[status];
+  const liveLinks =
+    links && links.length > 0
+      ? links
+      : liveLink
+        ? [{ label: "View Live", href: liveLink }]
+        : [];
 
   return (
     <div className="bdc-frame group flex h-full flex-col bg-white">
@@ -45,7 +54,7 @@ const ProjectCard = ({
           className={`transition-transform duration-500 group-hover:scale-[1.03] ${
             image.endsWith(".svg")
               ? "object-contain p-8"
-              : image.includes("tickets-thumb")
+              : image.includes("tickets-thumb") || image.includes("studiotimes-logo")
                 ? "object-contain bg-black"
                 : "object-cover"
           }`}
@@ -67,20 +76,21 @@ const ProjectCard = ({
           {description}
         </p>
 
-        {(liveLink || githubLink) && (
+        {(liveLinks.length > 0 || githubLink) && (
           <div
-            className={`mt-auto grid gap-3 p-1 ${githubLink && liveLink ? "grid-cols-2" : "grid-cols-1"}`}
+            className={`mt-auto grid gap-3 p-1 ${liveLinks.length + (githubLink ? 1 : 0) > 1 ? "grid-cols-2" : "grid-cols-1"}`}
           >
-            {liveLink && (
+            {liveLinks.map((item) => (
               <RingButton
-                text="View Live"
+                key={item.href}
+                text={item.label}
                 icon={CircleArrowRight}
-                href={liveLink}
+                href={item.href}
                 size="md"
                 target="_blank"
                 rel="noopener noreferrer"
               />
-            )}
+            ))}
             {githubLink && (
               <RingButton
                 text="Github"
