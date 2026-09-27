@@ -51,4 +51,5 @@ scripts/service-account.json
 apps/swamii.me/node_modules/
 apps/swamii.me/.next/
 apps/swamii.me/out/
+.firebase/
 

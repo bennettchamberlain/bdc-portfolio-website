@@ -1,11 +1,11 @@
 import About from "@/components/About";
 import ContactSection from "@/components/ContactSection";
+import WritingsSection from "@/components/WritingsSection";
 import Container from "@/components/Container";
 import HeroSection from "@/components/HeroSection";
 import Navbar from "@/components/Navbar";
 import ProjectsSection from "@/components/ProjectsSection";
 import SectionHeading from "@/components/SectionHeading";
-import SkillSection from "@/components/SkillsSection/SkillsSection";
 import ExperienceSection from "@/components/ExperienceSection/Experience";
 import LoadingScreen from "@/components/InitialLoadShell";
 
@@ -27,13 +27,13 @@ const page = () => {
               <SectionHeading title="Experience" />
               <ExperienceSection />
             </section>
-            <section data-section-label="Skills section">
-              <SectionHeading title="Skills" />
-              <SkillSection />
-            </section>
             <section data-section-label="About section">
               <SectionHeading title="About Me" />
               <About />
+            </section>
+            <section id="writings" data-section-label="Writings section">
+              <SectionHeading title="Writings" />
+              <WritingsSection />
             </section>
             <section data-section-label="Contact section">
               <ContactSection />

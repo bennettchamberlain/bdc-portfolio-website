@@ -15,10 +15,10 @@ type ButtonBoxProps = {
 };
 
 const fillClass =
-  "pointer-events-none absolute inset-x-0 top-0 z-0 h-0 bg-black transition-[height] duration-300 ease-in-out group-hover:h-full group-focus-visible:h-full group-active:h-full";
+  "btn-fill pointer-events-none absolute inset-x-0 top-0 z-0 h-0 bg-black transition-[height] duration-300 ease-in-out group-hover/btn:h-full group-hover/card:h-full group-focus-visible/btn:h-full group-active/btn:h-full";
 
 const labelClass =
-  "relative z-10 font-bold text-black transition-none group-hover:text-white group-focus-visible:text-white group-active:text-white [&_svg]:text-current";
+  "btn-label relative z-10 font-bold text-black transition-none group-hover/btn:text-white group-hover/card:text-white group-focus-visible/btn:text-white group-active/btn:text-white [&_svg]:text-current";
 
 export default function ButtonBox({
   children,
@@ -31,7 +31,7 @@ export default function ButtonBox({
   type = "button",
 }: ButtonBoxProps) {
   const classes = cn(
-    "group relative inline-flex items-center justify-center overflow-hidden bg-white",
+    "button-box group/btn relative inline-flex items-center justify-center overflow-hidden bg-white",
     border && "border-8 border-black",
     className,
   );

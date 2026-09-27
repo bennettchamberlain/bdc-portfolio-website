@@ -4,6 +4,7 @@ import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import { GeistPixelSquare } from "geist/font/pixel";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { site } from "@/data/site";
+import { storageImage } from "@/lib/firebase";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -43,9 +44,6 @@ const helvetica = localFont({
 export const metadata: Metadata = {
   title: site.title,
   description: site.description,
-  icons: {
-    icon: "/images/headshot.jpg",
-  },
   keywords: [
     "Bennett Chamberlain",
     "Software Engineer",
@@ -60,7 +58,7 @@ export const metadata: Metadata = {
     siteName: site.name,
     images: [
       {
-        url: "/images/headshot.jpg",
+        url: storageImage("/images/headshot.jpg"),
         width: 1200,
         height: 630,
         alt: site.name,

@@ -65,8 +65,8 @@ const Experience = ({
             aria-hidden
             className={`relative h-8 w-8 shrink-0 transition-transform duration-500 md:h-10 md:w-10 ${open ? "rotate-180" : ""}`}
           >
-            <span className="absolute top-[38%] left-0 h-2 w-[62%] origin-right rotate-45 bg-black" />
-            <span className="absolute top-[38%] right-0 h-2 w-[62%] origin-left -rotate-45 bg-black" />
+            <span className="absolute top-[57.7%] left-0 h-2 w-[56%] origin-right rotate-45 bg-black md:top-[59.9%]" />
+            <span className="absolute top-[57.7%] right-0 h-2 w-[56%] origin-left -rotate-45 bg-black md:top-[59.9%]" />
           </span>
         </div>
 

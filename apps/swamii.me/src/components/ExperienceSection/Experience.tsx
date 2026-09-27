@@ -1,6 +1,6 @@
 import React from "react";
 import Experience from "./ExperianceComponent";
-import { experience } from "@/data/site";
+import { education, experience } from "@/data/site";
 
 const ExperienceSection = () => {
   return (
@@ -19,6 +19,13 @@ const ExperienceSection = () => {
           first={index === 0}
         />
       ))}
+      <div className="px-[calc(3%+2rem)] pt-8 md:px-[calc(3%+3rem)]">
+        <p className="font-display text-2xl uppercase">{education.school}</p>
+        <p className="font-body text-base md:text-lg">{education.degree}</p>
+        <p className="font-body text-sm opacity-70 md:text-base">
+          {education.duration} · {education.location}
+        </p>
+      </div>
     </div>
   );
 };

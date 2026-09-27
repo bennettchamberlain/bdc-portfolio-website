@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Check, Copy } from "lucide-react";
 import { site } from "@/data/site";
-import ButtonBox from "./ButtonBox";
 
 type FootLink = { text: string; href?: string; copy?: boolean; underline?: boolean };
 type FootColumn = { title: string; links: FootLink[] };
@@ -19,7 +18,6 @@ const columns: FootColumn[] = [
   {
     title: "Work",
     links: [
-      { text: "Book a 15-minute call", href: site.calendar },
       { text: "Resume", href: site.resume },
       { text: "Projects", href: "/projectspage" },
     ],
@@ -58,27 +56,7 @@ const ContactSection = () => {
 
   return (
     <section className="relative overflow-hidden bg-white text-black">
-      <div className="px-[3%] pt-20 pb-0 sm:pt-24">
-        <div className="bdc-frame mb-10 p-6 md:p-8">
-          <h3 className="font-display text-2xl leading-tight tracking-tight text-balance md:text-3xl">
-            Book a 15-Minute Call
-          </h3>
-          <p className="font-body mt-3 max-w-xl text-neutral-600">
-            Want to connect? Pick a time that works for you. It goes straight onto my calendar.
-          </p>
-          <div className="mt-5">
-            <ButtonBox
-              href={site.calendar}
-              target="_blank"
-              rel="noopener noreferrer"
-              border
-              className="font-body h-[50px] px-6 text-base"
-            >
-              Schedule a Call
-            </ButtonBox>
-          </div>
-        </div>
-
+      <div className="px-[3%] pt-16 pb-0 sm:pt-20">
         <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4">
           {columns.map((col) => (
             <div key={col.title}>

@@ -45,18 +45,20 @@ const ProjectCard = ({
         : [];
 
   return (
-    <div className="bdc-frame group flex h-full flex-col bg-white">
+    <div className="bdc-frame group/card flex h-full flex-col bg-white">
       <div className="relative h-52 w-full overflow-hidden border-b-8 border-black bg-white">
         <Image
           src={image}
           alt={title}
           fill
-          className={`transition-transform duration-500 group-hover:scale-[1.03] ${
+            className={`transition-transform duration-500 group-hover/card:scale-[1.03] ${
             image.endsWith(".svg")
               ? "object-contain p-8"
-              : image.includes("tickets-thumb") || image.includes("studiotimes-logo")
+              : image.includes("tickets-thumb")
                 ? "object-contain bg-black"
-                : "object-cover"
+                : image.includes("studiotimes-logo")
+                  ? "object-contain bg-white p-6"
+                  : "object-cover"
           }`}
         />
       </div>
@@ -78,7 +80,7 @@ const ProjectCard = ({
 
         {(liveLinks.length > 0 || githubLink) && (
           <div
-            className={`mt-auto grid gap-3 p-1 ${liveLinks.length + (githubLink ? 1 : 0) > 1 ? "grid-cols-2" : "grid-cols-1"}`}
+            className={`mt-auto grid gap-3 p-1 has-[:hover]:[&_.button-box:not(:hover)_.btn-fill]:!h-0 has-[:hover]:[&_.button-box:not(:hover)_.btn-label]:!text-black ${liveLinks.length + (githubLink ? 1 : 0) > 1 ? "grid-cols-2" : "grid-cols-1"}`}
           >
             {liveLinks.map((item) => (
               <RingButton

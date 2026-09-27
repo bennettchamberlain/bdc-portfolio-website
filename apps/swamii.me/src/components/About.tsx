@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import { about, site } from "@/data/site";
+import { about, site, skillGroups } from "@/data/site";
 
 const About = () => {
   return (
@@ -12,11 +12,8 @@ const About = () => {
           <p className="font-body mb-4 text-base leading-relaxed text-neutral-700 sm:text-lg md:text-xl">
             {about.location}
           </p>
-          <p className="font-body mb-4 text-base leading-relaxed text-neutral-700 sm:text-lg md:text-xl">
-            {about.philosophy}
-          </p>
           <p className="font-body mb-6 text-base leading-relaxed text-neutral-700 sm:text-lg md:text-xl">
-            {about.hobbies}
+            {about.philosophy}
           </p>
 
           <div className="flex flex-wrap gap-6 py-2">
@@ -43,6 +40,28 @@ const About = () => {
               Resume <ArrowUpRight size={16} />
             </a>
           </div>
+        </div>
+
+        <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2">
+          {skillGroups.map((group) => (
+            <div
+              key={group.title}
+              className={`bdc-frame p-6 md:p-8 ${group.title === "Certification" ? "md:col-span-2" : ""}`}
+            >
+              <h3 className="font-display text-2xl tracking-tight md:text-3xl">{group.title}</h3>
+              <p className="font-body mt-2 text-sm text-neutral-500 md:text-base">{group.note}</p>
+              <ul className="mt-5 flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <li
+                    key={item}
+                    className="font-body border-4 border-black bg-black px-3 py-1.5 text-sm text-white md:text-base"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </section>

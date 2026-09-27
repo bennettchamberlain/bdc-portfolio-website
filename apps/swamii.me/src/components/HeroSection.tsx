@@ -5,6 +5,7 @@ import Image from "next/image";
 import RingButton from "./RingButton";
 import OpenToWorkNote from "./OpenToWorkNote";
 import { site } from "@/data/site";
+import { storageImage } from "@/lib/firebase";
 
 const HeroSection = () => {
   return (
@@ -39,7 +40,7 @@ const HeroSection = () => {
 
             <div className="bdc-frame relative h-64 w-full shrink-0 overflow-hidden sm:h-80 sm:w-72 lg:h-[420px] lg:w-[360px]">
               <Image
-                src="/images/headshot.jpg"
+                src={storageImage("/images/headshot.jpg")}
                 alt={site.name}
                 fill
                 priority
