@@ -11,9 +11,9 @@ const HeroSection = () => {
   return (
     <div className="bg-white pt-24 md:px-[2%] md:pt-28">
       <div className="px-4 pt-4 sm:px-6 sm:pt-6 md:ml-4 md:px-0 md:pt-8">
-        <div className="mb-10 flex max-w-7xl flex-col items-start justify-center pt-6 text-black sm:mt-10 md:mb-16 md:pt-0">
+        <div className="mb-10 flex flex-col items-start justify-center pt-6 text-black sm:mt-10 md:mb-16 md:pt-0">
           <div className="flex w-full flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-            <div className="min-w-0 flex-1">
+            <div className="min-w-0 w-full lg:max-w-3xl lg:flex-1">
               <h1 className="font-display text-4xl leading-[0.95] tracking-tight sm:text-6xl md:text-7xl lg:text-8xl xl:text-[110px]">
                 Hi I&apos;m {site.shortName}
               </h1>
@@ -38,13 +38,13 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <div className="bdc-frame relative h-64 w-full shrink-0 overflow-hidden sm:h-80 sm:w-72 lg:h-[420px] lg:w-[360px]">
+            <div className="bdc-frame relative ml-auto h-80 w-full max-w-sm shrink-0 overflow-hidden sm:h-96 sm:w-96 lg:h-[500px] lg:w-[clamp(24rem,34vw,40rem)] lg:max-w-none xl:h-[560px]">
               <Image
                 src={storageImage("/images/headshot.jpg")}
                 alt={site.name}
                 fill
                 priority
-                className="object-cover"
+                className="object-cover object-[center_30%]"
               />
             </div>
           </div>

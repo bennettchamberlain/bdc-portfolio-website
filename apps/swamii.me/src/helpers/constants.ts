@@ -19,6 +19,16 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: 11,
+    name: "Webbed Feet",
+    description:
+      "Montreal radio, drawn as a map of artists, collaborators, and the people who shaped them.",
+    image: storageImage("/images/projects/webbed-feet.png"),
+    link: "https://webbedfeetradio.ca",
+    status: "live",
+    projectBg: storageImage("/images/projects/webbed-feet.png"),
+  },
+  {
     id: 1,
     name: "StudioTimes",
     description:
@@ -121,16 +131,16 @@ export const projects: Project[] = [
     status: "live",
     projectBg: storageImage("/images/projects/rentfiesta.png"),
   },
-  {
-    id: 7,
-    name: "Sadie Scott",
-    description:
-      "Photography portfolio for Sadie Scott, rebuilt on Next.js and Sanity.",
-    image: storageImage("/images/projects/sadie-scott.jpg"),
-    link: "https://sadiescott.com/",
-    status: "building",
-    projectBg: storageImage("/images/projects/sadie-scott.jpg"),
-  },
+  // {
+  //   id: 7,
+  //   name: "Sadie Scott",
+  //   description:
+  //     "Photography portfolio for Sadie Scott, rebuilt on Next.js and Sanity.",
+  //   image: storageImage("/images/projects/sadie-scott.jpg"),
+  //   link: "https://sadiescott.com/",
+  //   status: "building",
+  //   projectBg: storageImage("/images/projects/sadie-scott.jpg"),
+  // },
   {
     id: 8,
     name: "Steady Fence & Railing",
@@ -160,16 +170,6 @@ export const projects: Project[] = [
     link: "https://the80percentbill.com/",
     status: "live",
     projectBg: storageImage("/images/projects/eighty-percent.png"),
-  },
-  {
-    id: 11,
-    name: "Webbed Feet",
-    description:
-      "Montreal radio, drawn as a map of artists, collaborators, and the people who shaped them.",
-    image: storageImage("/images/projects/webbed-feet.png"),
-    link: "https://www.webbedfeet.com/",
-    status: "live",
-    projectBg: storageImage("/images/projects/webbed-feet.png"),
   },
   {
     id: 12,

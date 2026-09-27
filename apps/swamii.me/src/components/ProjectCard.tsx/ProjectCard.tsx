@@ -97,6 +97,7 @@ const ProjectCard = ({
                 size="md"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="uppercase"
               />
             ))}
             {githubLink && (
@@ -107,6 +108,7 @@ const ProjectCard = ({
                 size="sm"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="uppercase"
               />
             )}
           </div>
