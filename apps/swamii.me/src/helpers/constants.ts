@@ -19,19 +19,6 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: 0,
-    name: "Lita Hotels",
-    description:
-      "A robot hotel stood up in 90 days. Several robot types, an elevator on a reverse-engineered protocol, and guest requests over SMS.",
-    image: storageImage("/images/projects/lita-hotels.jpg"),
-    links: [
-      { label: "Watch", href: "https://www.youtube.com/watch?v=bzdVsxfPiUs" },
-      { label: "Essay", href: "https://hook.org/anselm/essays/medium/elevator-pitch" },
-    ],
-    status: "live",
-    projectBg: storageImage("/images/projects/lita-hotels.jpg"),
-  },
-  {
     id: 1,
     name: "StudioTimes",
     description:
@@ -43,6 +30,40 @@ export const projects: Project[] = [
     ],
     status: "live",
     projectBg: storageImage("/images/studiotimes-logo.png"),
+  },
+  {
+    id: 13,
+    name: "Transcend Collective",
+    description:
+      "Storefront for a Los Angeles streetwear label, sitting on Shopify.",
+    image: storageImage("/images/projects/transcend-select.jpg"),
+    link: "https://www.transcendcollective.la/",
+    status: "live",
+    projectBg: storageImage("/images/projects/transcend-select.jpg"),
+  },
+  {
+    id: 14,
+    name: "Companion Intelligence",
+    description:
+      "The grandest one yet. One surface for a completely local ecosystem: self-hosted server infra, digital memory, and a harness layer for agents and apps you own. Posed as research. Warming up for business sales and consumer sales alike.",
+    image: storageImage("/images/projects/ci-home.jpg"),
+    link: "https://ci.computer",
+    status: "building",
+    projectBg: storageImage("/images/projects/ci-home.jpg"),
+  },
+  {
+    id: 0,
+    name: "Lita Hotels",
+    description:
+      "A robot hotel stood up in 90 days. Several robot types, an elevator on a reverse-engineered protocol, and guest requests over SMS.",
+    image: storageImage("/images/projects/lita-hotels.jpg"),
+    links: [
+      { label: "Watch", href: "https://www.youtube.com/watch?v=bzdVsxfPiUs" },
+      { label: "Essay", href: "https://hook.org/anselm/essays/medium/elevator-pitch" },
+      { label: "Website", href: "https://litahotel.com" },
+    ],
+    status: "live",
+    projectBg: storageImage("/images/projects/lita-hotels.jpg"),
   },
   {
     id: 2,
@@ -161,24 +182,24 @@ export const projects: Project[] = [
     projectBg: storageImage("/images/projects/baked-cravings.png"),
   },
   {
-    id: 13,
-    name: "Transcend Collective",
+    id: 18,
+    name: "512 Counsel",
     description:
-      "Storefront for a Los Angeles streetwear label, sitting on Shopify.",
-    image: storageImage("/images/projects/transcend.jpg"),
-    link: "https://www.transcendcollective.la/",
+      "Criminal defense site for Laurie Drymalla in Austin. Former prosecutor, and a municipal court judge.",
+    image: storageImage("/images/projects/512-counsel.png"),
+    link: "https://www.512counsel.com/",
     status: "live",
-    projectBg: storageImage("/images/projects/transcend.jpg"),
+    projectBg: storageImage("/images/projects/512-counsel.png"),
   },
   {
-    id: 14,
-    name: "Companion Intelligence",
+    id: 19,
+    name: "Law Offices of Paul D. Scott",
     description:
-      "The grandest one yet. One surface for a completely local ecosystem: self-hosted server infra, digital memory, and a harness layer for agents and apps you own. Posed as research. Warming up for business sales and consumer sales alike.",
-    image: storageImage("/images/ci-logo.svg"),
-    link: "https://ci.computer",
-    status: "building",
-    projectBg: storageImage("/images/ci-logo.svg"),
+      "Site for a whistleblower practice. False Claims Act, IRS, SEC, and the other reward programs.",
+    image: storageImage("/images/projects/lopds.png"),
+    link: "https://lopds.com",
+    status: "live",
+    projectBg: storageImage("/images/projects/lopds.png"),
   },
   {
     id: 15,

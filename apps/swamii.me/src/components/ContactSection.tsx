@@ -25,17 +25,14 @@ const columns: FootColumn[] = [
   {
     title: "Colophon",
     links: [
-      { text: "Next.js", href: "https://nextjs.org" },
-      { text: "TypeScript", href: "https://www.typescriptlang.org" },
-      { text: "Tailwind CSS", href: "https://tailwindcss.com" },
+      { text: "Helvetica" },
+      { text: "Primetime" },
+      { text: "Los Angeles" },
     ],
   },
   {
     title: "Project",
-    links: [
-      { text: "GitHub", href: site.github },
-      { text: "Flutter archive", href: "https://github.com/bennettchamberlain/bdc-portfolio-website" },
-    ],
+    links: [{ text: "GitHub", href: site.github }],
   },
 ];
 

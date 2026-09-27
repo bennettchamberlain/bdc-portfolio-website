@@ -80,7 +80,13 @@ const ProjectCard = ({
 
         {(liveLinks.length > 0 || githubLink) && (
           <div
-            className={`mt-auto grid gap-3 p-1 has-[:hover]:[&_.button-box:not(:hover)_.btn-fill]:!h-0 has-[:hover]:[&_.button-box:not(:hover)_.btn-label]:!text-black ${liveLinks.length + (githubLink ? 1 : 0) > 1 ? "grid-cols-2" : "grid-cols-1"}`}
+            className={`mt-auto grid gap-3 p-1 has-[:hover]:[&_.button-box:not(:hover)_.btn-fill]:!h-0 has-[:hover]:[&_.button-box:not(:hover)_.btn-label]:!text-black ${
+              liveLinks.length + (githubLink ? 1 : 0) >= 3
+                ? "grid-cols-3"
+                : liveLinks.length + (githubLink ? 1 : 0) > 1
+                  ? "grid-cols-2"
+                  : "grid-cols-1"
+            }`}
           >
             {liveLinks.map((item) => (
               <RingButton
