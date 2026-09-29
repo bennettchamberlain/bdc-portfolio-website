@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getWritings } from "@/lib/writings";
+import WritingFrame from "./WritingFrame";
 
 const order = [
   // "what-it-means-to-be-an-artist",
@@ -14,8 +15,8 @@ const WritingsSection = () => {
 
   return (
     <div className="grid grid-cols-1 gap-8 px-[3%] py-10">
-      {writings.map((piece) => (
-        <article key={piece.slug} className="bdc-frame p-6 md:p-8">
+      {writings.map((piece, index) => (
+        <WritingFrame key={piece.slug} index={index}>
           <div className="font-body flex items-center gap-3 text-sm text-neutral-500">
             <span>{piece.kind}</span>
             <span aria-hidden="true">·</span>
@@ -29,7 +30,7 @@ const WritingsSection = () => {
           <p className="font-body mt-3 max-w-2xl text-base text-neutral-600 md:text-lg">
             {piece.dek}
           </p>
-        </article>
+        </WritingFrame>
       ))}
     </div>
   );

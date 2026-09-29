@@ -58,7 +58,7 @@ const ProjectCard = ({
                 ? "object-contain bg-black"
                 : image.includes("studiotimes-logo")
                   ? "object-contain bg-white p-6"
-                  : "object-cover"
+                  : "object-cover object-top"
           }`}
         />
       </div>

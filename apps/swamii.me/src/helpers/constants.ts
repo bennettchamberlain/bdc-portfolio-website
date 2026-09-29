@@ -19,49 +19,6 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: 11,
-    name: "Webbed Feet",
-    description:
-      "Montreal radio, drawn as a map of artists, collaborators, and the people who shaped them.",
-    image: storageImage("/images/projects/webbed-feet.png"),
-    link: "https://webbedfeetradio.ca",
-    status: "live",
-    projectBg: storageImage("/images/projects/webbed-feet.png"),
-  },
-  {
-    id: 1,
-    name: "StudioTimes",
-    description:
-      "Studio booking and ops. The product is live, and so is the community next door.",
-    image: storageImage("/images/studiotimes-logo.png"),
-    links: [
-      { label: "studiotimes.io", href: "https://studiotimes.io" },
-      { label: "community.studiotimes.io", href: "https://community.studiotimes.io" },
-    ],
-    status: "live",
-    projectBg: storageImage("/images/studiotimes-logo.png"),
-  },
-  {
-    id: 13,
-    name: "Transcend Collective",
-    description:
-      "Storefront for a Los Angeles streetwear label, sitting on Shopify.",
-    image: storageImage("/images/projects/transcend-select.jpg"),
-    link: "https://www.transcendcollective.la/",
-    status: "live",
-    projectBg: storageImage("/images/projects/transcend-select.jpg"),
-  },
-  {
-    id: 14,
-    name: "Companion Intelligence",
-    description:
-      "The grandest one yet. One surface for a completely local ecosystem: self-hosted server infra, digital memory, and a harness layer for agents and apps you own. Posed as research. Warming up for business sales and consumer sales alike.",
-    image: storageImage("/images/projects/ci-home.jpg"),
-    link: "https://ci.computer",
-    status: "building",
-    projectBg: storageImage("/images/projects/ci-home.jpg"),
-  },
-  {
     id: 0,
     name: "Lita Hotels",
     description:
@@ -76,14 +33,47 @@ export const projects: Project[] = [
     projectBg: storageImage("/images/projects/lita-hotels.jpg"),
   },
   {
-    id: 2,
-    name: "Black Soldier Fly",
+    id: 11,
+    name: "Webbed Feet",
     description:
-      "Published paper on when and where the flies breed. I built the climate data behind the temporal patterns and the biogeographical hotspots.",
-    image: storageImage("/images/projects/bsf.png"),
-    link: "https://www.researchgate.net/publication/407068727_When_and_where_Data_insights_for_identifying_temporal_patterns_in_BSF_behavior_and_biogeographical_hotspots",
+      "Website for a Montreal radio show, drawn as a map of artists, collaborators, and the people who shaped them.",
+    image: storageImage("/images/projects/webbed-feet.png"),
+    link: "https://webbedfeetradio.ca",
     status: "live",
-    projectBg: storageImage("/images/projects/bsf.png"),
+    projectBg: storageImage("/images/projects/webbed-feet.png"),
+  },
+  {
+    id: 14,
+    name: "Companion Intelligence",
+    description:
+      "Private server for local models and agents, with an app store and Companion Memory on hardware you own. A 3D avatar talks in the room over WebXR, on those same models.",
+    image: "/images/ci-logo.svg",
+    link: "https://ci.computer",
+    status: "building",
+    projectBg: "/images/ci-logo.svg",
+  },
+  {
+    id: 1,
+    name: "StudioTimes",
+    description:
+      "Studio booking and ops. The product is live, and so is the community next door.",
+    image: storageImage("/images/studiotimes-logo.png"),
+    links: [
+      { label: "studiotimes.io", href: "https://studiotimes.io" },
+      { label: "Community", href: "https://community.studiotimes.io" },
+    ],
+    status: "live",
+    projectBg: storageImage("/images/studiotimes-logo.png"),
+  },
+  {
+    id: 13,
+    name: "Transcend Collective",
+    description:
+      "Storefront for a Los Angeles streetwear label, sitting on Shopify.",
+    image: storageImage("/images/projects/transcend-select.jpg"),
+    link: "https://www.transcendcollective.la/",
+    status: "live",
+    projectBg: storageImage("/images/projects/transcend-select.jpg"),
   },
   {
     id: 3,
@@ -161,16 +151,16 @@ export const projects: Project[] = [
     status: "live",
     projectBg: storageImage("/images/projects/superhot.png"),
   },
-  {
-    id: 10,
-    name: "The 80% Bill",
-    description:
-      "A pledge and a voter guide for 21 bills most Americans already agree on. More than 25,000 pledges.",
-    image: storageImage("/images/projects/eighty-percent.png"),
-    link: "https://the80percentbill.com/",
-    status: "live",
-    projectBg: storageImage("/images/projects/eighty-percent.png"),
-  },
+  // {
+  //   id: 10,
+  //   name: "The 80% Bill",
+  //   description:
+  //     "A pledge and a voter guide for 21 bills most Americans already agree on. More than 25,000 pledges.",
+  //   image: storageImage("/images/projects/eighty-percent.png"),
+  //   link: "https://the80percentbill.com/",
+  //   status: "live",
+  //   projectBg: storageImage("/images/projects/eighty-percent.png"),
+  // },
   {
     id: 12,
     name: "Baked Cravings",
@@ -219,6 +209,21 @@ export const projects: Project[] = [
     image: storageImage("/images/paintapp-still-1.png"),
     status: "live",
     projectBg: storageImage("/images/paintapp-still-1.png"),
+  },
+  {
+    id: 2,
+    name: "Black Soldier Fly",
+    description:
+      "Published paper on when and where the flies breed. I built the climate data behind the temporal patterns and the biogeographical hotspots.",
+    image: storageImage("/images/projects/bsf.png"),
+    links: [
+      {
+        label: "Published Research",
+        href: "https://www.researchgate.net/publication/407068727_When_and_where_Data_insights_for_identifying_temporal_patterns_in_BSF_behavior_and_biogeographical_hotspots",
+      },
+    ],
+    status: "live",
+    projectBg: storageImage("/images/projects/bsf.png"),
   },
   {
     id: 17,
