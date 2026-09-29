@@ -195,7 +195,7 @@ export const projects: Project[] = [
     id: 15,
     name: "Event Ticketing Web App",
     description:
-      "Guest, press, and hotel ticketing for the Mr. Brainwash Art Museum in Beverly Hills. Automated email with a QR code that scanned at the door.",
+      "Guest, press, and hotel ticketing for the Mr. Brainwash Art Museum in Beverly Hills. Over 250,000 tickets issued, each an automated email with a QR code that scanned at the door.",
     image: storageImage("/images/tickets-thumb.png"),
     link: "https://www.mrbrainwashartmuseum.com/tickets/",
     status: "live",

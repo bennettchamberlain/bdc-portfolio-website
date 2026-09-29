@@ -24,11 +24,7 @@ const columns: FootColumn[] = [
   },
   {
     title: "Colophon",
-    links: [
-      { text: "Helvetica" },
-      { text: "Primetime" },
-      { text: "Los Angeles" },
-    ],
+    links: [{ text: "📍 LA, SF, NY" }],
   },
   {
     title: "Project",

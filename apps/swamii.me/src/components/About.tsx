@@ -26,6 +26,14 @@ const About = () => {
               GitHub <ArrowUpRight size={16} />
             </a>
             <a
+              href={site.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-body flex items-center gap-1 text-sm font-bold text-black hover:underline sm:text-base"
+            >
+              LinkedIn <ArrowUpRight size={16} />
+            </a>
+            <a
               href={`mailto:${site.email}`}
               className="font-body flex items-center gap-1 text-sm font-bold text-black hover:underline sm:text-base"
             >
