@@ -1,15 +1,12 @@
 # Bennett Chamberlain
 
-Personal site. Next.js lives in `apps/swamii.me`. The Flutter app in this repo is the archive.
-
-## Run
+The site at [bennettchamberlain.com](https://bennettchamberlain.com). Next.js, exported to `out/` and hosted on Firebase (`bdc-website-2`).
 
 ```bash
-cd apps/swamii.me
 npm install
 npm run dev
+npm run build
+firebase deploy --only hosting
 ```
 
-Copy and projects are in `apps/swamii.me/src/data/site.ts`.
-
-Layout adapted from [swamii.me](https://swamii.me).
+Copy and projects live in `src/data/site.ts`. Writings live in `src/content/writings`. A writing with an `app:` URL is a separate app, usually on its own subdomain, and the writings list opens that URL.

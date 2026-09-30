@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "apps/swamii.me/out",
+    "public": "out",
     "cleanUrls": true,
     "ignore": [
       "firebase.json",
@@ -9,4 +9,3 @@
     ]
   }
 }
-
