@@ -3,7 +3,7 @@ import { getWritings } from "@/lib/writings";
 import WritingFrame from "./WritingFrame";
 
 const order = [
-  "parlance",
+  // "parlance",
   // "what-it-means-to-be-an-artist",
   "flutters-underlying-mechanisms",
   "historical-spelunking",

@@ -23,7 +23,7 @@ export const about = {
   intro:
     "I'm a software engineer, systems architect, and project manager. I build software that looks finished and actually ships.",
   location:
-    "I'm a passionate technologist. I care about being excellent, and about making the world a better place.",
+    "I'm a passionate technologist. I care about being the best person I can be, and about making the world a better place.",
   philosophy:
     "Find what you love that fuels your vision. Iterate, improve, repeat, and make time to enjoy life.",
 };
@@ -64,6 +64,18 @@ export const experience = [
       "Artists in all 50 states. Marketplace payments in 150+ countries. Hundreds of studios and thousands of sessions.",
     ],
     skills: ["Next.js", "Payments", "CI/CD"],
+  },
+  {
+    company: "Solwey Consulting",
+    role: "Software Engineer, part-time",
+    duration: "Dec 2020 — May 2024",
+    location: "San Francisco",
+    initials: "SO",
+    points: [
+      "Built Shopify stores for Transcend Collective, Baked Cravings, Roberi & Fraud, and Xavvi, then headless storefronts on Next.js.",
+      "Shipped WordPress sites, led a team of 8, and connected Salesforce and NetSuite for the William James Association's fundraising and grants.",
+    ],
+    skills: ["Shopify", "WordPress", "Next.js"],
   },
   {
     company: "Mr Brainwash Art Museum",
