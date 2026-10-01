@@ -150,7 +150,7 @@ export const experience = [
 
 export const education = {
   school: "Virginia Tech",
-  degree: "Bachelor's in Applied Economics, Minor in Computer Science",
+  degree: "Bachelor's in Computer Science, Minor in Economics",
   duration: "Aug 2016 — May 2020",
   location: "Blacksburg",
 };
