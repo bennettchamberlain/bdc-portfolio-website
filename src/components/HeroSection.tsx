@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Calendar, FileDown } from "lucide-react";
+import { Calendar } from "lucide-react";
 import Image from "next/image";
 import RingButton from "./RingButton";
 import OpenToWorkNote from "./OpenToWorkNote";
@@ -31,9 +31,9 @@ const HeroSection = () => {
                 >
                   <RingButton text="Book a Meeting" icon={Calendar} />
                 </a>
-                <a href={site.resume} target="_blank" rel="noopener noreferrer">
+                {/* <a href={site.resume} target="_blank" rel="noopener noreferrer">
                   <RingButton text="Resume" icon={FileDown} size="md" />
-                </a>
+                </a> */}
                 <OpenToWorkNote />
               </div>
             </div>
