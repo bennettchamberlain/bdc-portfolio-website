@@ -31,7 +31,7 @@ export const about = {
 export const experience = [
   {
     company: "Companion Intelligence",
-    role: "Co-founder",
+    role: "Full Stack Engineer / Client Engineer",
     duration: "June 2025 — Present",
     location: "Los Angeles",
     initials: "CI",

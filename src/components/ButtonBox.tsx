@@ -18,7 +18,7 @@ const fillClass =
   "btn-fill pointer-events-none absolute inset-x-0 top-0 z-0 h-0 bg-black transition-[height] duration-300 ease-in-out group-hover/btn:h-full group-hover/card:h-full group-focus-visible/btn:h-full group-active/btn:h-full";
 
 const labelClass =
-  "btn-label relative z-10 font-bold text-black transition-none group-hover/btn:text-white group-hover/card:text-white group-focus-visible/btn:text-white group-active/btn:text-white [&_svg]:text-current";
+  "btn-label relative z-10 inline-flex items-center gap-2 font-bold text-black transition-none group-hover/btn:text-white group-hover/card:text-white group-focus-visible/btn:text-white group-active/btn:text-white [&_svg]:shrink-0 [&_svg]:text-current";
 
 export default function ButtonBox({
   children,
