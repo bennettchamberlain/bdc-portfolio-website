@@ -17,10 +17,7 @@ const columns: FootColumn[] = [
   },
   {
     title: "Work",
-    links: [
-      { text: "Resume", href: site.resume },
-      { text: "Projects", href: "/projectspage" },
-    ],
+    links: [{ text: "Projects", href: "/projectspage" }],
   },
   {
     title: "Colophon",

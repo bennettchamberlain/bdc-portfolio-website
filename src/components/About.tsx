@@ -39,14 +39,6 @@ const About = () => {
             >
               Email <ArrowUpRight size={16} />
             </a>
-            <a
-              href={site.resume}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-body flex items-center gap-1 text-sm font-bold text-black hover:underline sm:text-base"
-            >
-              Resume <ArrowUpRight size={16} />
-            </a>
           </div>
         </div>
 

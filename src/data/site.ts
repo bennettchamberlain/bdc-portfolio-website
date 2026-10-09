@@ -10,7 +10,6 @@ export const site = {
   calendar: "https://calendar.app.google/jqssrh7DXJjift1r9",
   github: "https://github.com/bennettchamberlain",
   linkedin: "https://www.linkedin.com/in/bennett-chamberlain-300624143",
-  resume: "/files/Bennett-Resume.pdf",
   roles: ["Software Engineer", "Systems Architect", "Project Manager"],
   tagline: "I build software.",
   blurb:
